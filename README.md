@@ -7,8 +7,8 @@ AI-powered system for answering questions about PDF documents using LLMs and vec
 ## Features
 
 - PDF document processing
-- Question answering using LLMs
 - Vector embeddings for efficient document retrieval
+- Question answering using LLMs
 - Web interface using Gradio
 
 ## Installation
