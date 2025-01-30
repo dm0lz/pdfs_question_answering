@@ -22,14 +22,14 @@ class VectorStore:
         if not urls:
             raise ValueError("URLs required for creating new index")
 
-        pdf_texts = PDFSReader().read_pdfs_from_urls(urls)
-        texts = self._prepare_texts(pdf_texts)
+        pdfs_texts = PDFSReader().read_pdfs_from_urls(urls)
+        texts = self._prepare_texts(pdfs_texts)
         vectorstore = FAISS.from_texts(texts, self.embeddings)
         vectorstore.save_local(self.index_path)
         return vectorstore
 
-    def _prepare_texts(self, pdf_texts: List[str]) -> List[str]:
-        combined_text = " ".join(pdf_texts)
+    def _prepare_texts(self, pdfs_texts: List[str]) -> List[str]:
+        combined_text = " ".join(pdfs_texts)
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=1024, chunk_overlap=100
         )
