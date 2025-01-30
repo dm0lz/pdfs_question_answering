@@ -1,0 +1,6 @@
+.venv/
+faiss_index/
+.gradio/
+__pycache__/
+*.pyc
+*.pyo
