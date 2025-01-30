@@ -16,7 +16,8 @@ AI-powered system for answering questions about PDF documents using LLMs and vec
 ### Prerequisites
 
 - Python 3.12+
-- pip or uv package manager
+- virtualenv
+- pip package manager
 
 ### Setup
 
@@ -34,7 +35,7 @@ pip install -r requirements.txt
 
 2. Setup LM Studio server and load model deepseek-r1-distill-qwen-7b
 
-3. Process PDFs and answer questions via CLI:
+3. Process PDFs and answer questions via CLI or GUI:
 
 ```bash
 python main.py
