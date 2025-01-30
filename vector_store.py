@@ -7,8 +7,8 @@ from pdfs_reader import PDFSReader
 
 
 class VectorStore:
-    def __init__(self, model_name: str = "sentence-transformers/all-MiniLM-L12-v2"):
-        self.embeddings = HuggingFaceEmbeddings(model_name=model_name)
+    def __init__(self, embedding_model: str):
+        self.embeddings = HuggingFaceEmbeddings(model_name=embedding_model)
         self.index_path = "faiss_index"
 
     def load_or_create_index(self, urls: Optional[List[str]] = None) -> FAISS:

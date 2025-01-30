@@ -4,8 +4,8 @@ import gradio as gr
 
 
 class GradioInterface:
-    def __init__(self, urls: List[str]):
-        self.qa_system = QASystem()
+    def __init__(self, embedding_model: str, llm_model: str, urls: List[str]):
+        self.qa_system = QASystem(embedding_model=embedding_model, llm_model=llm_model)
         self.qa_system.setup(urls)
 
     def create_interface(self):
@@ -14,5 +14,5 @@ class GradioInterface:
             inputs=gr.Textbox(label="Enter your question"),
             outputs="text",
             title="Document Question Answering",
-            description="Ask a question about yoga and get an answer based on the loaded texts.",
+            description="Ask a question and get an answer based on the pdfs content.",
         )
