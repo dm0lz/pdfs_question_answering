@@ -8,11 +8,10 @@ warnings.filterwarnings("ignore")
 
 
 def cli(embedding_model, llm_model, urls):
-    qa_system = QASystem(embedding_model, llm_model)
-    qa_system.setup(urls)
-    print("PDF Question Answering System Ready!")
+    qa_system = QASystem(embedding_model, llm_model, urls)
+    print("PDF Question Answering System Ready !")
     while True:
-        question = input("\nEnter your question: (type 'exit' to quit)").strip()
+        question = input("\nEnter your question (type 'exit' to quit) : ").strip()
         if question.lower() == "exit":
             break
         else:
